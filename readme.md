@@ -60,8 +60,8 @@ This repository contains the Logisim implementation of a Simple-As-Possible (SAP
 
 Video demonstrations are available to guide you through the SAP-1 CPU simulation:
 
-- Auto Mode (`sap1_auto.circ`): [Watch Here](https://youtu.be/vwInhCTQctg)
 - Manual Mode (`sap1_manual.circ`): [Watch Here](https://youtu.be/PrJcHA_dC8Q)
+- Auto Mode (`sap1_auto.circ`): [Watch Here](https://youtu.be/vwInhCTQctg)
 
 ---
 
@@ -69,13 +69,13 @@ Video demonstrations are available to guide you through the SAP-1 CPU simulation
 
 ## Final Circuits
 
-- **Auto Mode (`sap1_auto.circ`)**
-
-  ![Main Control Unit](images/sap1_auto_avishek.png)
-
-- **Manual Mode (`sap1_manual.circ`)**
+- **Manual Mode (`sap1_manual_avishek.circ`)**
 
   ![Main Control Unit](images/sap1_main_avishek.png)
+
+- **Auto Mode (`sap1_auto_avishek.circ`)**
+
+  ![Main Control Unit](images/sap1_auto_avishek.png)
 
 ---
 
@@ -147,7 +147,7 @@ The control unit uses combinational logic (AND, OR, NOT gates) and a state count
 
 <a id="control-auto"></a>
 
-### Control Signals — Auto Mode (`sap1_auto.circ`)
+### Control Signals — Auto Mode (`sap1_auto_avishek.circ`)
 
 Boolean equations for control pins (implemented with gates, active when `cpu_mode` is HIGH, i.e., `debug` is LOW):
 
@@ -194,13 +194,13 @@ Boolean equations for control pins (implemented with gates, active when `cpu_mod
 
 ## Machine Code Program: Addition with JMP
 
-This program loads two 8-bit values (51 and 25), adds them, stores the sum (76), and loops with JMP.
+This program loads two 8-bit values (19 and 47), adds them, stores the sum (66), and loops with JMP.
 
 ### Memory Addresses
 
-- Value 1 (Dec 51 & Hex `33`) at: `00001101` (Decimal 13)
-- Value 2 (Dec 25 & Hex `19`) at: `00001110` (Decimal 14)
-- Sum (Dec 76 & Hex `4C`) at: `00001111` (Decimal 15)
+- Value 1 (Dec 19 & Hex `13`) at: `00001101` (Decimal 13)
+- Value 2 (Dec 47 & Hex `2F`) at: `00001110` (Decimal 14)
+- Sum (Dec 66 & Hex `42`) at: `00001111` (Decimal 15)
 
 ### Instruction Set & Program
 
@@ -217,8 +217,8 @@ This program loads two 8-bit values (51 and 25), adds them, stores the sum (76),
 
 | Address (Binary) | Data (Binary) | Decimal | Hex  |
 | ---------------- | ------------- | ------- | ---- |
-| `00001101`       | `00110011`    | 51      | `33` |
-| `00001110`       | `00011001`    | 25      | `19` |
+| `00001101`       | `00110011`    | 19      | `13` |
+| `00001110`       | `00011001`    | 47      | `2F` |
 
 ---
 
@@ -228,17 +228,28 @@ This program loads two 8-bit values (51 and 25), adds them, stores the sum (76),
 
 Use the web-based SAP-1 Compiler to convert assembly code to hex for Logisim ROM.
 
-**Compiler Link:** [Your Deployed Web App URL](https://yourapp.streamlit.app) (Deploy using `web_app/` instructions)
+**Compiler Link:** [Deployed Web App](https://avishek-sap1-compiler-app.streamlit.app/) (Deploy using `web_app/` instructions)
 
 **Example:**
 
-- Assembly for ADD: `(LDA 13 LDB 14 ADD STA 15 HLT ORG 13 DEC 51 DEC 25)`
+- Assembly for ADD:
+
+```LDA 13
+LDB 14
+ADD
+STA 15
+HLT
+ORG 13
+DEC 19
+DEC 47
+```
+
 - Hex Code: `1D 2E 30 5F F0 00 00 00 00 00 00 00 00 33 19 00`
 
 - Assembly for JMP & ADD: `(LDA 13 LDB 14 JMP 4 ORG 4 ADD STA 15 HLT ORG 13 DEC 51 DEC 25)`
 - Hex Code: `1D 2E 64 00 00 30 5F F0 00 00 00 00 00 33 19 00`
 
-![Compiler](images/compiler.png)
+![Compiler](images/avishek_assembler.png)
 
 ---
 
@@ -266,11 +277,11 @@ Control signals execute the instruction over T4-T6, halting at `HLT`.
 
 <a id="run-auto"></a>
 
-## Run the CPU — Auto Mode (`sap1_auto.circ`)
+## Run the CPU — Auto Mode (`sap1_auto_avishek.circ`)
 
 ### 1) Initial Setup
 
-1. Open `sap1_auto.circ` in Logisim Evolution (download from [logisim-evolution.github.io](https://github.com/logisim-evolution/logisim-evolution)).
+1. Open `sap1_auto_avishek.circ` in Logisim Evolution (download from [avishek-github](https://github.com/AvishekChy/sap-1-cpu-microprocessor-logisim-evolution)).
 2. Ensure `debug` is **OFF (LOW)**.
 3. Keep `clk` **OFF**.
 4. Pulse `pc_reset` once to set PC to `0000`.
