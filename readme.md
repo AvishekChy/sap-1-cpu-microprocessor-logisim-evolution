@@ -228,7 +228,10 @@ This program loads two 8-bit values 19(Avishek's student id) and 47(Avishek's fr
 
 Use the web-based SAP-1 Compiler to convert assembly code to hex for Logisim ROM.
 
-**Compiler Link:** [Deployed Web App](https://avishek-sap1-compiler-app.streamlit.app/) == [GitHub Repo](https://github.com/AvishekChy/sap-1-compiler)
+**Compiler Link:**
+
+- [Deployed Web App](https://avishek-sap1-compiler-app.streamlit.app/)
+- [Assembler GitHub Repo](https://github.com/AvishekChy/sap-1-assembler)
 
 **Example:**
 
@@ -265,7 +268,7 @@ DEC 47
 
 - Hex Code: `1D 2E 64 00 30 5F F0 00 00 00 00 00 00 13 2F 00`
 
----
+## ![Compiler](images/avishek_assembler_for_JMP_ADD.png)
 
 <a id="fde"></a>
 
