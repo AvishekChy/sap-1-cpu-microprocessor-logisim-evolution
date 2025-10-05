@@ -377,7 +377,7 @@ Control signals execute the instruction over T4-T6, halting at `HLT`.
    - Pulse `mar_in_en_manual` once.
    - Set `debug_data` to value (e.g., `00011101` for `LDA 13`).
    - Pulse `sram_wr_manual` once.
-3. Load all (e.g., `1D 2E 30 5F 64 F0` and `33 19`).
+3. Load all (e.g., `1D 2E 30 5F F0 ` and `13 2F`).
 4. Turn **OFF** `debug` (LOW).
 5. Pulse `pc_reset` again.
 
@@ -390,7 +390,7 @@ Control signals execute the instruction over T4-T6, halting at `HLT`.
 ### 4) Verify Result
 
 1. After `HLT`, check RAM address `00001111` (15).
-2. Expect `01001100` (76, Hex `4C`).
+2. Expect `01000010` (66, Hex `42`).
 
 ![Final Result](images/sap1_result_avishek.png)
 
