@@ -169,7 +169,7 @@ Boolean equations for control pins (implemented with gates, active when `cpu_mod
 
 <a id="control-manual"></a>
 
-### Control Signals — Manual Mode (`sap1_manual.circ`)
+### Control Signals — Manual Mode (`sap1_manual_avishek.circ`)
 
 - `pc_out_final = T1 AND cpu_mode`
 - `mar_in_en_final = (T1 AND cpu_mode) OR ((T4 AND isLDA) AND cpu_mode) OR ((T4 AND isLDB) AND cpu_mode) OR ((T4 AND isSTA) AND cpu_mode) OR (mar_in_en_manual AND NOT cpu_mode)`
@@ -194,7 +194,7 @@ Boolean equations for control pins (implemented with gates, active when `cpu_mod
 
 ## Machine Code Program: Addition with JMP
 
-This program loads two 8-bit values (19 and 47), adds them, stores the sum (66), and loops with JMP.
+This program loads two 8-bit values 19(Avishek's student id) and 47(Avishek's friend's student id), adds them, stores the sum (66), and loops with JMP.
 
 ### Memory Addresses
 
@@ -244,12 +244,26 @@ DEC 19
 DEC 47
 ```
 
-- Hex Code: `1D 2E 30 5F F0 00 00 00 00 00 00 00 00 33 19 00`
+- Hex Code: `2E 30 5F F0 00 00 00 00 00 00 00 00 00 13 2F 00`
 
-- Assembly for JMP & ADD: `(LDA 13 LDB 14 JMP 4 ORG 4 ADD STA 15 HLT ORG 13 DEC 51 DEC 25)`
+![Compiler](images/avishek_assembler_for_ADD.png)
+
+- Assembly for JMP & ADD:
+
+```
+LDA 13
+LDB 14
+JMP 4
+ORG 4
+ADD
+STA 15
+HLT
+ORG 13
+DEC 19
+DEC 47
+```
+
 - Hex Code: `1D 2E 64 00 00 30 5F F0 00 00 00 00 00 33 19 00`
-
-![Compiler](images/avishek_assembler.png)
 
 ---
 
