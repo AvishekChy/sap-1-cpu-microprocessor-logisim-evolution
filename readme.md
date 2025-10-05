@@ -83,7 +83,7 @@ Video demonstrations are available to guide you through the SAP-1 CPU simulation
 
 - **Auto Mode (`sap1_auto_avishek.circ`)**
 
-  ![Main Control Unit](images/sap1_auto_avishek.png)
+  ![Main Control Unit](images/sap1_auto1_avishek.png)
 
 ---
 
@@ -326,7 +326,7 @@ Control signals execute the instruction over T4-T6, halting at `HLT`.
 ### 2) Program the ROM
 
 1. Right-click ROM, select **Edit Contents**.
-2. Enter hex (e.g., `1D 2E 30 5F 64 F0 00 00 00 00 00 00 00 33 19 00`).
+2. Enter hex (e.g., `1D 2E 30 5F F0 00 00 00 00 00 00 00 00 13 2F 00`).
 3. Save with **OK**.
 
 ### 3) Load Program to RAM (Bootloader)
@@ -351,9 +351,9 @@ Control signals execute the instruction over T4-T6, halting at `HLT`.
 ### 6) Verify Result
 
 1. After `HLT`, check RAM address `00001111` (15).
-2. Expect `01001100` (76, Hex `4C`) if ADD executed.
+2. Expect `01000010` (66, Hex `42`) if ADD executed.
 
-![Verify Result](images/sap1_result_avishek.png)
+![Verify Result](images/sap1_auto1_avishek.png)
 
 ---
 
