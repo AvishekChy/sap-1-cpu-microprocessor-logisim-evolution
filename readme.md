@@ -202,7 +202,7 @@ Boolean equations for control pins (implemented with gates, active when `cpu_mod
 
 ## Machine Code Program: Addition with JMP
 
-This program loads two 8-bit values 19(Avishek's student id) and 47(another random number), adds them, stores the sum (66), and loops with JMP.
+This program loads two 8-bit values `19 (Avishek's student id)` and `47 (another random number)`, adds them, stores the sum (66), and loops with JMP.
 
 ### Memory Addresses
 
