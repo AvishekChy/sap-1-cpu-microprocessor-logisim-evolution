@@ -6,6 +6,12 @@
 
   <img src="https://img.shields.io/badge/Logisim-green?style=for-the-badge&logo=google-circles&logoColor=white" alt="Logisim Badge">
 
+  <img src="https://img.shields.io/badge/8--bit%20Architecture-orange?style=for-the-badge&logo=appveyor&logoColor=white" alt="8-bit Architecture Badge">
+
+  <img src="https://img.shields.io/badge/Assembler-purple?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="Assembler Badge">
+
+  <img src="https://img.shields.io/badge/Streamlit-brown?style=for-the-badge&logo=verizon&logoColor=white" alt="Streamlit Badge">
+
 </p>
 
 ## Table of Contents
@@ -194,7 +200,7 @@ Boolean equations for control pins (implemented with gates, active when `cpu_mod
 
 ## Machine Code Program: Addition with JMP
 
-This program loads two 8-bit values 19(Avishek's student id) and 47(Avishek's friend's student id), adds them, stores the sum (66), and loops with JMP.
+This program loads two 8-bit values 19(Avishek's student id) and 47(another random number), adds them, stores the sum (66), and loops with JMP.
 
 ### Memory Addresses
 
@@ -204,21 +210,24 @@ This program loads two 8-bit values 19(Avishek's student id) and 47(Avishek's fr
 
 ### Instruction Set & Program
 
-| Address (Binary) | Instruction (Binary) | Hex  | Mnemonic & Explanation               |
-| ---------------- | -------------------- | ---- | ------------------------------------ |
-| `00000000`       | `0001 1101`          | `1D` | `LDA 13` (Load A from address 13)    |
-| `00000001`       | `0010 1110`          | `2E` | `LDB 14` (Load B from address 14)    |
-| `00000010`       | `0011 0000`          | `30` | `ADD` (Add B to A, store in A)       |
-| `00000011`       | `0101 1111`          | `5F` | `STA 15` (Store A to address 15)     |
-| `00000100`       | `0110 0100`          | `64` | `JMP 4` (Jump to address 4 for loop) |
-| `00000101`       | `1111 0000`          | `F0` | `HLT` (Halt execution)               |
+| Address (Binary) | Instruction (Binary) | Hex  | Mnemonic & Explanation            |
+| ---------------- | -------------------- | ---- | --------------------------------- |
+| `00000000`       | `0001 1101`          | `1D` | `LDA 13` (Load A from address 13) |
+| `00000001`       | `0010 1110`          | `2E` | `LDB 14` (Load B from address 14) |
+| `00000010`       | `0011 0000`          | `30` | `ADD` (Add B to A, store in A)    |
+| `00000011`       | `0101 1111`          | `5F` | `STA 15` (Store A to address 15)  |
+| `00000101`       | `1111 0000`          | `F0` | `HLT` (Halt execution)            |
+
+<!--
+before halt, we add a JMP instruction to create a loop:
+ | `00000100`       | `0110 0100`          | `64` | `JMP 4` (Jump to address 4 for loop) | -->
 
 ### Data Values in RAM
 
 | Address (Binary) | Data (Binary) | Decimal | Hex  |
 | ---------------- | ------------- | ------- | ---- |
-| `00001101`       | `00110011`    | 19      | `13` |
-| `00001110`       | `00011001`    | 47      | `2F` |
+| `00001101`       | `00010011`    | 19      | `13` |
+| `00001110`       | `00101111`    | 47      | `2F` |
 
 ---
 
@@ -237,7 +246,8 @@ Use the web-based SAP-1 Compiler to convert assembly code to hex for Logisim ROM
 
 - Assembly for ADD:
 
-```LDA 13
+```
+LDA 13
 LDB 14
 ADD
 STA 15
@@ -247,7 +257,11 @@ DEC 19
 DEC 47
 ```
 
-- Hex Code: `2E 30 5F F0 00 00 00 00 00 00 00 00 00 13 2F 00`
+- Hex Code for ADD:
+
+```
+1D 2E 30 5F F0 00 00 00 00 00 00 00 00 13 2F 00
+```
 
 ![Compiler](images/avishek_assembler_for_ADD.png)
 
@@ -266,7 +280,11 @@ DEC 19
 DEC 47
 ```
 
-- Hex Code: `1D 2E 64 00 30 5F F0 00 00 00 00 00 00 13 2F 00`
+- Hex Code for JMP & ADD:
+
+```
+1D 2E 64 00 30 5F F0 00 00 00 00 00 00 13 2F 00
+```
 
 ## ![Compiler](images/avishek_assembler_for_JMP_ADD.png)
 
