@@ -218,7 +218,7 @@ This program loads two 8-bit values `19 (Avishek's student id)` and `47 (another
 | `00000001`       | `0010 1110`          | `2E` | `LDB 14` (Load B from address 14) |
 | `00000010`       | `0011 0000`          | `30` | `ADD` (Add B to A, store in A)    |
 | `00000011`       | `0101 1111`          | `5F` | `STA 15` (Store A to address 15)  |
-| `00000101`       | `1111 0000`          | `F0` | `HLT` (Halt execution)            |
+| `00000100`       | `1111 0000`          | `F0` | `HLT` (Halt execution)            |
 
 <!--
 before halt, we add a JMP instruction to create a loop:
