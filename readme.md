@@ -66,10 +66,15 @@ This repository contains the Logisim implementation of a Simple-As-Possible (SAP
 
 Video demonstrations are available to guide you through the SAP-1 CPU simulation:
 
-- Manual Mode (`sap1_manual_avishek.circ`):
-<!-- [Watch Here](https://youtu.be/PrJcHA_dC8Q) -->
-- Auto Mode (`sap1_auto_avishek.circ`):
-  <!-- [Watch Here](https://youtu.be/vwInhCTQctg) -->
+- **Step by step guide :**
+  [Watch Here](https://youtu.be/wIqGsQ7BMSo)
+
+  or
+
+- **Copy the link into your browser :**
+  ```
+  https://youtu.be/wIqGsQ7BMSo
+  ```
 
 ---
 

@@ -496,8 +496,7 @@
       <a name="addrWidth" val="4"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 4 8
-1d 2e 65 0 0 30 5f f0
-5*0 33 19
+0
 </a>
     </comp>
     <comp lib="5" loc="(100,440)" name="Hex Digit Display"/>
